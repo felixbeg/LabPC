@@ -69,6 +69,8 @@ def read_data(paths, header=30):
 
                 meta_data['date'] = header_lines[4].split()[-2]
                 meta_data['interferometerDistance'] = float(header_lines[9].split()[-1])
+                meta_data['averages'] = int(header_lines[10].split()[-1])
+                meta_data['integrationTime'] = float(header_lines[11].split()[-1])
                 meta_data['tappingAmplitude'] = float(header_lines[19].split()[-1])
                 meta_data['setpoint'] = float(header_lines[23].split()[-1])
                 meta_data['globalMatchingFactor'] = None

@@ -346,7 +346,13 @@ class StandardTwoPoint():
         ax.set_ylabel(rf'Phase $\phi_{self.harmonic}$ (rad)')
         if ylim is not None:
             ax.set_ylim(ylim)
-        ax.set_title(rf'Nano FTIR phase of O{self.harmonic} harmonic')
+        ax.set_title(f'Nano FTIR phase of O{self.harmonic} harmonic\n' +
+                     f'Int. time: {self.meta_data["integrationTime"]} ms, ' +
+                     f'Averages: {self.meta_data["averages"]}, ' +
+                     f'Mirror dist.: {self.meta_data["interferometerDistance"]} mu,\n' +
+                     f'Tapping ampl.: {self.meta_data["tappingAmplitude"]} nm, ' +
+                     f'Setpoint.: {self.meta_data["setpoint"]} % '
+                     )
 
         plt.show()
 
